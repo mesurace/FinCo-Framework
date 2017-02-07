@@ -1,8 +1,8 @@
 package com.asd.group1.framework.gui.components.ext;
 
-import com.asd.group1.framework.gui.components.asd.ASDButton;
+import com.asd.group1.framework.gui.components.finco.FincoButton;
 
-public class ExitButton extends ASDButton {
+public class ExitButton extends FincoButton {
 
 }
 

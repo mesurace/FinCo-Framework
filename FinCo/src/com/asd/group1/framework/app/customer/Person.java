@@ -5,6 +5,8 @@ import java.util.Date;
 import com.asd.group1.framework.lib.account.IAccount;
 import com.asd.group1.framework.lib.customer.ACustomer;
 import com.asd.group1.framework.lib.customer.IPerson;
+import com.asd.group1.framework.lib.functor.IFunctor;
+import com.asd.group1.framework.lib.predicate.IPredicate;
 
 /**
  * @author Suresh Adhikari
@@ -38,6 +40,24 @@ public class Person extends ACustomer implements IPerson {
 	public void sendEmail(IAccount account, String msg) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void sendEmail(IFunctor f, IPredicate p, double amount) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public IPredicate getDepositPredicate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public IPredicate getWithdrawPredicate() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
