@@ -21,8 +21,6 @@ public interface IAccount {
 
     public String getAcctNumber();
     
-    public void setAmount(double amount);
-
     public String generateReport();
     
     public double getBalance();

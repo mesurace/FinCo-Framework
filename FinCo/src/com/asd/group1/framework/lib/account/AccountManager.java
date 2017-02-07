@@ -2,11 +2,13 @@ package com.asd.group1.framework.lib.account;
 
 import com.asd.group1.framework.lib.customer.ICustomer;
 import com.asd.group1.framework.lib.functor.IFunctor;
+import com.asd.group1.framework.lib.mediator.Mediator;
 import com.asd.group1.framework.lib.mediator.Message;
 import com.asd.group1.framework.lib.predicate.IPredicate;
 import com.asd.group1.framework.lib.transaction.Deposit;
 import com.asd.group1.framework.lib.transaction.ITransaction;
 import com.asd.group1.framework.lib.transaction.TransactionManager;
+import com.asd.group1.singleton.SingletonProvider;
 
 /**
  *
@@ -22,7 +24,7 @@ public class AccountManager {
 	private Mediator mediator;
 
 	public AccountManager(Mediator mediator) {
-		transactionManager = ClassicSingleton.getInstanceTransactionManager();
+		transactionManager = SingletonProvider.getInstanceTransactionManager();
 		this.mediator = mediator;
 		this.send(new Message(ACCOUNT_LIST_NOT_EMPTY, false));
 		this.send(new Message(ACCOUNT_SELECTED, false));

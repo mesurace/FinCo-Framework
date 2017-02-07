@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import com.asd.group1.framework.lib.account.AccountManager;
+import com.asd.group1.singleton.SingletonProvider;
 
 /**
  *

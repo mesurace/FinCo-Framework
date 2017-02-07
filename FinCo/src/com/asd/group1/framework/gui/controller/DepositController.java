@@ -4,9 +4,12 @@ import java.awt.event.ActionEvent;
 
 import com.asd.group1.framework.app.type.TransactionType;
 import com.asd.group1.framework.app.type.Types;
+import com.asd.group1.framework.gui.AccountFrm;
 import com.asd.group1.framework.lib.account.AccountManager;
 import com.asd.group1.framework.lib.account.IAccount;
+import com.asd.group1.framework.lib.factory.FincoFactory;
 import com.asd.group1.framework.lib.transaction.ITransaction;
+import com.asd.group1.singleton.SingletonProvider;
 
 /**
  *

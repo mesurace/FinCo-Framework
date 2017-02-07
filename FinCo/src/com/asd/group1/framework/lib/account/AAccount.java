@@ -18,7 +18,7 @@ public abstract class AAccount implements IAccount{
 	private List<ITransaction> transactions;
 	private ICustomer iCustomer;
 	
-	public String getAccounttNumber() {
+	public String getAcctNumber() {
         return accountNumber;
     }
 
