@@ -1,12 +1,12 @@
 package com.asd.group1.framework.gui.components.ext;
 
-import com.asd.group1.framework.gui.components.asd.ASDButton;
+import com.asd.group1.framework.gui.components.finco.FincoButton;
 import com.asd.group1.framework.lib.account.AccountManager;
 import com.asd.group1.framework.lib.mediator.IReceiverColleague;
 import com.asd.group1.framework.lib.mediator.Mediator;
 import com.asd.group1.framework.lib.mediator.Message;
 
-public class AddInterestButton extends ASDButton implements IReceiverColleague {
+public class AddInterestButton extends FincoButton implements IReceiverColleague {
 
     private static final String NAME = "ADD_INTEREST_BUTTON";
 

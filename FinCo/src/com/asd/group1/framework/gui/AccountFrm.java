@@ -11,9 +11,6 @@ import javax.swing.UIManager;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import com.asd.group1.framework.gui.components.asd.ASDFrame;
-import com.asd.group1.framework.gui.components.asd.ASDPanel;
-import com.asd.group1.framework.gui.components.asd.ASDScrollPane;
 import com.asd.group1.framework.gui.components.ext.AccountEntryDataModel;
 import com.asd.group1.framework.gui.components.ext.AccountListTable;
 import com.asd.group1.framework.gui.components.ext.AddInterestButton;
@@ -22,6 +19,9 @@ import com.asd.group1.framework.gui.components.ext.DepositButton;
 import com.asd.group1.framework.gui.components.ext.ExitButton;
 import com.asd.group1.framework.gui.components.ext.PersonalAccountButton;
 import com.asd.group1.framework.gui.components.ext.WithdrawButton;
+import com.asd.group1.framework.gui.components.finco.FincoFrame;
+import com.asd.group1.framework.gui.components.finco.FincoPanel;
+import com.asd.group1.framework.gui.components.finco.FincoScrollPane;
 import com.asd.group1.framework.gui.controller.AccountController;
 import com.asd.group1.framework.gui.controller.DepositController;
 import com.asd.group1.framework.gui.controller.ExitController;
@@ -35,7 +35,7 @@ import com.asd.group1.framework.lib.mediator.Mediator;
 import com.asd.group1.framework.lib.mediator.Message;
 import com.asd.group1.singleton.SingletonProvider;
 
-public class AccountFrm extends ASDFrame {
+public class AccountFrm extends FincoFrame {
 
     static {
        // new FactoryProducer();
@@ -48,7 +48,7 @@ public class AccountFrm extends ASDFrame {
     public boolean newaccount;
     protected static AccountEntryDataModel model;
     protected static AccountListTable table1;
-    protected ASDScrollPane scrollPane1;
+    protected FincoScrollPane scrollPane1;
 
     AccountFrm myframe = null;
 
@@ -77,7 +77,7 @@ public class AccountFrm extends ASDFrame {
          /for Adding personal account, Adding company account
          /Deposit, Withdraw and Exit from the system
          */
-        scrollPane1 = new ASDScrollPane();
+        scrollPane1 = new FincoScrollPane();
         model = setTableModel(mediator);
         table1 = new AccountListTable(model);
         //model=table1
@@ -197,7 +197,7 @@ public class AccountFrm extends ASDFrame {
         try {
             model.setRowCount(0);
             AccountManager accountManager = SingletonProvider.getInstanceAccountManager();
-            for (Iterator<AAccount> it = accountManager.getAccountList().getSortedIterator(new AccountComparator(selectedColumn)); it.hasNext();) {
+            for (Iterator<AAccount> it = accountManager.getAccounts().getSortedIterator(new AccountComparator(selectedColumn)); it.hasNext();) {
                 IAccount iAccount = it.next();
                 rowdata = new Object[8];
                 rowdata[0] = iAccount.getAcctNumber();
@@ -252,7 +252,7 @@ public class AccountFrm extends ASDFrame {
         }
     }
 
-    protected ASDPanel JPanel1 = new ASDPanel();
+    protected FincoPanel JPanel1 = new FincoPanel();
     protected PersonalAccountButton JButton_PerAC = new PersonalAccountButton();
     protected CompanyAccountButton JButton_CompAC = new CompanyAccountButton();
     protected DepositButton JButton_Deposit = new DepositButton(mediator);
