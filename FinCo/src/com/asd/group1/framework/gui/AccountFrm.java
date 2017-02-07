@@ -23,6 +23,7 @@ import com.asd.group1.framework.gui.components.ext.ExitButton;
 import com.asd.group1.framework.gui.components.ext.PersonalAccountButton;
 import com.asd.group1.framework.gui.components.ext.WithdrawButton;
 import com.asd.group1.framework.lib.account.AccountManager;
+import com.asd.group1.framework.lib.account.IAccount;
 import com.asd.group1.framework.lib.mediator.Mediator;
 import com.asd.group1.framework.lib.mediator.Message;
 import com.asd.group1.singleton.SingletonProvider;
