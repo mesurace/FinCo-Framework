@@ -35,7 +35,7 @@ public abstract class AAcount implements IAccount{
     }
 
     @Override
-    public void addEntry(ITransaction transaction) {
+    public void addTransaction(ITransaction transaction) {
         if (this.transactions == null) {
             this.transactions = new ArrayList<>();
         }
@@ -86,6 +86,5 @@ public abstract class AAcount implements IAccount{
         return ((ACustomer) iCustomer).getCity();
     }
 
-    
 }
 

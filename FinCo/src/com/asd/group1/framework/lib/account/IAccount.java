@@ -9,7 +9,7 @@ import com.asd.group1.framework.lib.transaction.ITransaction;
  */
 public interface IAccount {
 	
-	public void addEntry(ITransaction transaction);
+	public void addTransaction(ITransaction transaction);
 
     public double getCurrentBalance();
 
