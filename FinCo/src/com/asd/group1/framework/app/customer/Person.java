@@ -3,13 +3,14 @@ package com.asd.group1.framework.app.customer;
 import java.util.Date;
 
 import com.asd.group1.framework.lib.account.IAccount;
+import com.asd.group1.framework.lib.customer.ACustomer;
 import com.asd.group1.framework.lib.customer.IPerson;
 
 /**
  * @author Suresh Adhikari
  *
  */
-public class Person implements IPerson {
+public class Person extends ACustomer implements IPerson {
 
 	private Date birthDate;
 

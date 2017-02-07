@@ -18,7 +18,7 @@ public abstract class ACustomer implements ICustomer {
 	private String email;
 	private List<IAccount> accountList;
 
-	ACustomer() {
+	public ACustomer() {
 		accountList = new ArrayList<>();
 	}
 
@@ -76,6 +76,14 @@ public abstract class ACustomer implements ICustomer {
 
 	public void setAccountList(List<IAccount> accountList) {
 		this.accountList = accountList;
+	}
+
+	public double getBalance() {
+		double balance = 0;
+		for (IAccount account : this.getAccountList()) {
+			balance += account.getCurrentBalance();
+		}
+		return balance;
 	}
 
 }
