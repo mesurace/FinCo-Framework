@@ -3,9 +3,9 @@ package com.asd.group1.framework.gui.components.ext;
 import javax.swing.table.TableModel;
 
 import com.asd.group1.framework.gui.components.finco.FincoTable;
+import com.asd.group1.framework.lib.account.AccountManager;
 import com.asd.group1.framework.lib.mediator.IReceiverColleague;
 import com.asd.group1.framework.lib.mediator.Message;
-import com.asd.group1.framework.lib.model.AccountManager;
 import com.asd.group1.singleton.SingletonProvider;
 
 

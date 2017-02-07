@@ -1,7 +1,7 @@
 package com.asd.group1.framework.app.model;
 
+import com.asd.group1.framework.lib.account.AAccount;
 import com.asd.group1.framework.lib.customer.ICustomer;
-import com.asd.group1.framework.lib.model.AAccount;
 
 /**
  *

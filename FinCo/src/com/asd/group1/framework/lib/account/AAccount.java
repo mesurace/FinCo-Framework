@@ -1,4 +1,4 @@
-package com.asd.group1.framework.lib.model;
+package com.asd.group1.framework.lib.account;
 
 import java.util.ArrayList;
 import java.util.List;

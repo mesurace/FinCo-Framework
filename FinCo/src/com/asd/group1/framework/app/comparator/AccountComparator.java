@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.asd.group1.framework.lib.model.AAccount;
+import com.asd.group1.framework.lib.account.AAccount;
 
 /**
  *

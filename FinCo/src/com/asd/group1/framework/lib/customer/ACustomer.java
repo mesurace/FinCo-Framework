@@ -3,7 +3,7 @@ package com.asd.group1.framework.lib.customer;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.asd.group1.framework.lib.model.IAccount;
+import com.asd.group1.framework.lib.account.IAccount;
 
 /**
  * @author Suresh Adhikari
