@@ -1,7 +1,7 @@
 package com.asd.group1.framework.lib.customer;
 
-import com.asd.group1.framework.lib.account.IAccount;
 import com.asd.group1.framework.lib.functor.IFunctor;
+import com.asd.group1.framework.lib.model.IAccount;
 import com.asd.group1.framework.lib.predicate.IPredicate;
 
 /**

@@ -1,4 +1,4 @@
-package com.asd.group1.framework.lib.account;
+package com.asd.group1.framework.lib.model;
 
 import com.asd.group1.framework.lib.customer.ICustomer;
 import com.asd.group1.framework.lib.transaction.ITransaction;

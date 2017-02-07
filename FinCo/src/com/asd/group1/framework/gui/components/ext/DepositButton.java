@@ -1,10 +1,10 @@
 package com.asd.group1.framework.gui.components.ext;
 
 import com.asd.group1.framework.gui.components.finco.FincoButton;
-import com.asd.group1.framework.lib.account.AccountManager;
 import com.asd.group1.framework.lib.mediator.IReceiverColleague;
 import com.asd.group1.framework.lib.mediator.Mediator;
 import com.asd.group1.framework.lib.mediator.Message;
+import com.asd.group1.framework.lib.model.AccountManager;
 
 public class DepositButton extends FincoButton implements IReceiverColleague {
 

@@ -1,10 +1,10 @@
 package com.asd.group1.framework.lib.transaction;
 
 import com.asd.group1.framework.app.functor.NewBalanceFunctor;
-import com.asd.group1.framework.lib.account.AccountManager;
-import com.asd.group1.framework.lib.account.IAccount;
 import com.asd.group1.framework.lib.customer.ICustomer;
 import com.asd.group1.framework.lib.functor.IFunctor;
+import com.asd.group1.framework.lib.model.AccountManager;
+import com.asd.group1.framework.lib.model.IAccount;
 
 /**
  *

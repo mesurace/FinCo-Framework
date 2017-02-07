@@ -7,10 +7,10 @@ import com.asd.group1.framework.app.type.TransactionType;
 import com.asd.group1.framework.app.type.Types;
 import com.asd.group1.framework.gui.AccountFrm;
 import com.asd.group1.framework.gui.JDialog_Dialogview;
-import com.asd.group1.framework.lib.account.AccountManager;
-import com.asd.group1.framework.lib.account.IAccount;
 import com.asd.group1.framework.lib.factory.FincoFactory;
 import com.asd.group1.framework.lib.factory.TransactionFactory;
+import com.asd.group1.framework.lib.model.AccountManager;
+import com.asd.group1.framework.lib.model.IAccount;
 import com.asd.group1.framework.lib.transaction.ITransaction;
 import com.asd.group1.singleton.SingletonProvider;
 

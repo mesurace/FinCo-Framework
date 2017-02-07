@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 
 import com.asd.group1.framework.gui.AccountFrm;
 import com.asd.group1.framework.gui.JDialog_AddAccount;
-import com.asd.group1.framework.lib.account.AccountManager;
+import com.asd.group1.framework.lib.model.AccountManager;
 import com.asd.group1.singleton.SingletonProvider;
 
 /**

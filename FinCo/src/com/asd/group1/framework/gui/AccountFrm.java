@@ -27,12 +27,12 @@ import com.asd.group1.framework.gui.controller.DepositController;
 import com.asd.group1.framework.gui.controller.ExitController;
 import com.asd.group1.framework.gui.controller.InterestController;
 import com.asd.group1.framework.gui.controller.WithdrawController;
-import com.asd.group1.framework.lib.account.AAccount;
-import com.asd.group1.framework.lib.account.AccountManager;
-import com.asd.group1.framework.lib.account.IAccount;
 import com.asd.group1.framework.lib.customer.ACustomer;
 import com.asd.group1.framework.lib.mediator.Mediator;
 import com.asd.group1.framework.lib.mediator.Message;
+import com.asd.group1.framework.lib.model.AAccount;
+import com.asd.group1.framework.lib.model.AccountManager;
+import com.asd.group1.framework.lib.model.IAccount;
 import com.asd.group1.singleton.SingletonProvider;
 
 public class AccountFrm extends FincoFrame {

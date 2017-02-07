@@ -2,7 +2,7 @@ package com.asd.group1.framework.lib.transaction;
 
 import java.util.Date;
 
-import com.asd.group1.framework.lib.account.IAccount;
+import com.asd.group1.framework.lib.model.IAccount;
 
 /**
  *

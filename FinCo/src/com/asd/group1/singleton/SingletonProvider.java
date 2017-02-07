@@ -1,8 +1,8 @@
 package com.asd.group1.singleton;
 
 import com.asd.group1.framework.gui.AccountFrm;
-import com.asd.group1.framework.lib.account.AccountManager;
 import com.asd.group1.framework.lib.mediator.Mediator;
+import com.asd.group1.framework.lib.model.AccountManager;
 import com.asd.group1.framework.lib.transaction.TransactionManager;
 
 public class SingletonProvider {

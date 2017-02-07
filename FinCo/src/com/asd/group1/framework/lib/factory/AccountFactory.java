@@ -1,8 +1,8 @@
 package com.asd.group1.framework.lib.factory;
 
-import com.asd.group1.framework.app.account.FincoAccount;
+import com.asd.group1.framework.app.model.FincoAccount;
 import com.asd.group1.framework.app.type.AccountType;
-import com.asd.group1.framework.lib.account.IAccount;
+import com.asd.group1.framework.lib.model.IAccount;
 
 /**
  *
