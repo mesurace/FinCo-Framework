@@ -8,7 +8,7 @@ import com.asd.group1.framework.lib.account.AccountManager;
 
 /**
  *
- * @author naimi_000
+ * @author Manish Karki
  */
 public class AccountController implements Controller {
 
