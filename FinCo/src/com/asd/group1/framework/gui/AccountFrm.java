@@ -11,6 +11,7 @@ import javax.swing.UIManager;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import com.asd.group1.framework.app.comparator.AccountComparator;
 import com.asd.group1.framework.gui.components.ext.AccountEntryDataModel;
 import com.asd.group1.framework.gui.components.ext.AccountListTable;
 import com.asd.group1.framework.gui.components.ext.AddInterestButton;
