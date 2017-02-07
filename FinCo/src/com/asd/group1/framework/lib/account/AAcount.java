@@ -45,7 +45,7 @@ public abstract class AAcount implements IAccount{
     }
 
     public void updateAmountByTransaction(ITransaction transaction) {
-        this.balance += 0;
+        this.balance += transaction.getSignedAmount();
     }
 
 
