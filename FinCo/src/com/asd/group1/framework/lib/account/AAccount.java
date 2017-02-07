@@ -11,7 +11,7 @@ import com.asd.group1.framework.lib.transaction.ITransaction;
  *
  * @author Manish Karki
  */
-public abstract class AAcount implements IAccount{
+public abstract class AAccount implements IAccount{
 
 	private String accountNumber;
 	private double balance;
