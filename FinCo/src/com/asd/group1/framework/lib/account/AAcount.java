@@ -3,6 +3,8 @@ package com.asd.group1.framework.lib.account;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.asd.group1.framework.lib.customer.ACustomer;
+import com.asd.group1.framework.lib.customer.ICustomer;
 import com.asd.group1.framework.lib.transaction.ITransaction;
 
 /**
@@ -14,6 +16,7 @@ public abstract class AAcount implements IAccount{
 	private String accountNumber;
 	private double balance;
 	private List<ITransaction> transactions;
+	private ICustomer iCustomer;
 	
 	public String getAccounttNumber() {
         return accountNumber;
@@ -48,6 +51,15 @@ public abstract class AAcount implements IAccount{
         this.balance += transaction.getSignedAmount();
     }
 
+    @Override
+    public ICustomer getCustomer() {
+        return iCustomer;
+    }
+
+    @Override
+    public void setCustomer(ICustomer iCustomer) {
+        this.iCustomer = iCustomer;
+    }
 
     @Override
     public String generateReport() {
@@ -67,11 +79,11 @@ public abstract class AAcount implements IAccount{
     }
 
     public String getName() {
-        return (ACustomer)ICustomer.getName();
+        return ((ACustomer)iCustomer).getName();
     }
 
     public String getCity() {
-        return ((ACustomer) ICustomer).getCity();
+        return ((ACustomer) iCustomer).getCity();
     }
 
     
