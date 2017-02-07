@@ -11,5 +11,6 @@ public interface ICustomer {
 	public void addAccount(IAccount account);
 	public void removeAccount(IAccount account);
 	public void sendEmail(IAccount account,String msg);
+	public double getBalance();
 
 }
