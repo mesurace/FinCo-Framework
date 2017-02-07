@@ -5,9 +5,9 @@ package com.asd.group1.framework.gui;
 
 import javax.swing.ButtonGroup;
 
-import com.asd.group1.framework.gui.components.asd.ASDDialog;
+import com.asd.group1.framework.gui.components.finco.FincoDialog;
 
-public class JDialog_AddAccount extends ASDDialog {
+public class JDialog_AddAccount extends FincoDialog {
 
     private AccountFrm parentframe;
     //protected SymMouse aSymMouse = new SymMouse();

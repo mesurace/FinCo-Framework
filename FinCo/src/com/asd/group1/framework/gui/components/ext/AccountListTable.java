@@ -2,14 +2,14 @@ package com.asd.group1.framework.gui.components.ext;
 
 import javax.swing.table.TableModel;
 
-import com.asd.group1.framework.gui.components.asd.ASDTable;
+import com.asd.group1.framework.gui.components.finco.FincoTable;
 import com.asd.group1.framework.lib.account.AccountManager;
 import com.asd.group1.framework.lib.mediator.IReceiverColleague;
 import com.asd.group1.framework.lib.mediator.Message;
 import com.asd.group1.singleton.SingletonProvider;
 
 
-public class AccountListTable extends ASDTable implements IReceiverColleague {
+public class AccountListTable extends FincoTable implements IReceiverColleague {
 
     private static final String NAME = "ACCOUNT_LIST_TABLE";
 
