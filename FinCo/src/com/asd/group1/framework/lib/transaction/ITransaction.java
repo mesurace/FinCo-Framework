@@ -11,8 +11,20 @@ import com.asd.group1.framework.lib.functor.IFunctor;
  */
 public interface ITransaction {
 	public double getSignedAmount();
-	public void compute();
-	public IFunctor<ICustomer> getFunctor();
-	public void setupTransaction(AccountManager accountManager, IAccount account);
-}
 
+	public void compute();
+
+	public void setAccount(IAccount account);
+
+	public IAccount getAccount();
+
+	public IFunctor<ICustomer> getFunctor();
+
+	public void setupTransaction(AccountManager accountManager, IAccount account);
+
+	public double getAmount();
+	
+	public void setAmount(double amount);
+
+	public void setName(String name);
+}
