@@ -39,5 +39,6 @@ public class Deposit extends ATransaction{
 		this.account = account;
 	}
 
+
 }
 

@@ -20,6 +20,8 @@ public interface IAccount {
     public void updateAmountByTransaction(ITransaction transaction);
 
     public String getAcctNumber();
+    
+    public void setAmount(double amount);
 
     public String generateReport();
     
