@@ -5,9 +5,11 @@ import java.awt.event.ActionEvent;
 import com.asd.group1.framework.app.type.TransactionType;
 import com.asd.group1.framework.app.type.Types;
 import com.asd.group1.framework.gui.AccountFrm;
+import com.asd.group1.framework.gui.JDialog_Dialogview;
 import com.asd.group1.framework.lib.account.AccountManager;
 import com.asd.group1.framework.lib.account.IAccount;
 import com.asd.group1.framework.lib.factory.FincoFactory;
+import com.asd.group1.framework.lib.factory.TransactionFactory;
 import com.asd.group1.framework.lib.transaction.ITransaction;
 import com.asd.group1.singleton.SingletonProvider;
 
@@ -23,7 +25,8 @@ public class DepositController implements Controller {
         accountManager = SingletonProvider.getInstanceAccountManager();
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void actionPerformed(ActionEvent ae) {
         AccountFrm accountFrm = SingletonProvider.getInstanceAccountFrm();
         String accnr = accountFrm.getAccountNo();
@@ -39,7 +42,7 @@ public class DepositController implements Controller {
     public void deposit(String accountNumber, String amount, String name) {
         try {
             IAccount account = accountManager.getAccountById(accountNumber);
-            ITransaction iTransaction = FincoFactory.getFactory(Types.TRANSACTION).getTransaction(TransactionType.DEPOSIT);
+            ITransaction iTransaction = ((TransactionFactory)FincoFactory.getFactory(Types.TRANSACTION)).getTransaction(TransactionType.DEPOSIT);
             iTransaction.setAmount(Double.parseDouble(amount));
             iTransaction.setName(name);
             accountManager.deposit(account, iTransaction);

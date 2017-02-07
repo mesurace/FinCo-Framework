@@ -1,7 +1,15 @@
 package com.asd.group1.framework.lib.account;
 
+import java.util.Iterator;
+
+import com.asd.group1.framework.app.type.TransactionType;
+import com.asd.group1.framework.app.type.Types;
+import com.asd.group1.framework.lib.FincoArrayList;
 import com.asd.group1.framework.lib.customer.ICustomer;
+import com.asd.group1.framework.lib.factory.FincoFactory;
+import com.asd.group1.framework.lib.factory.TransactionFactory;
 import com.asd.group1.framework.lib.functor.IFunctor;
+import com.asd.group1.framework.lib.mediator.ISenderColleague;
 import com.asd.group1.framework.lib.mediator.Mediator;
 import com.asd.group1.framework.lib.mediator.Message;
 import com.asd.group1.framework.lib.predicate.IPredicate;
@@ -14,17 +22,20 @@ import com.asd.group1.singleton.SingletonProvider;
  *
  * @author Manish Karki
  */
-public class AccountManager {
+public class AccountManager implements ISenderColleague {
 
-	private static final String UPDATE_ACCOUNT_TABLE = "UPDATE_ACCOUNT_TABLE";
+	public static final String UPDATE_ACCOUNT_TABLE = "UPDATE_ACCOUNT_TABLE";
 	public static final String ACCOUNT_SELECTED = "ACCOUNT_SELECTED";
     public static final String ACCOUNT_LIST_NOT_EMPTY = "ACCOUNT_LIST_NOT_EMPTY";
-
+    private static final String NAME = "ACCOUNT_MANAGER";
+    
 	private TransactionManager transactionManager = null;
 	private Mediator mediator;
+	private FincoArrayList<AAccount> accounts;
 
 	public AccountManager(Mediator mediator) {
 		transactionManager = SingletonProvider.getInstanceTransactionManager();
+		accounts = new FincoArrayList<>();
 		this.mediator = mediator;
 		this.send(new Message(ACCOUNT_LIST_NOT_EMPTY, false));
 		this.send(new Message(ACCOUNT_SELECTED, false));
@@ -33,6 +44,10 @@ public class AccountManager {
 	public void removeAccount(IAccount account) {
 
 	}
+	
+	public FincoArrayList<AAccount> getAccounts() {
+        return accounts;
+    }
 
 	public void addAccountTransaction(IAccount account, ITransaction transaction) {
 		account.addTransaction(transaction);
@@ -58,14 +73,21 @@ public class AccountManager {
 		this.send(new Message(UPDATE_ACCOUNT_TABLE, true));
 	}
 
-	private void send(Message message) {
+	@Override
+	public void send(Message message) {
 		mediator.send(this, new Message(message.getsub(), message.isStatus()));
 
 	}
 
+	@SuppressWarnings("unchecked")
 	public IAccount getAccountById(String accrno) {
-		// TODO Auto-generated method stub
-		return null;
+		for (Iterator<IAccount> it = accounts.iterator(); it.hasNext();) {
+            IAccount iAccount = it.next();
+            if (iAccount.getAcctNumber().equalsIgnoreCase(accrno)) {
+                return iAccount;
+            }
+        }
+        return null;
 	}
 
 	public void deposit(IAccount account, ITransaction iTransaction) {
@@ -86,7 +108,21 @@ public class AccountManager {
 	}
 
 	public void addInterest() {
-		// TODO Auto-generated method stub
-		
+		for (Iterator<AAccount> it = accounts.iterator(); it.hasNext();) {
+            AAccount account = it.next();
+            double interestAmount = account.getInterestAmount();
+            ITransaction deposit = ( (TransactionFactory)FincoFactory.getFactory(Types.TRANSACTION)).getTransaction(TransactionType.DEPOSIT);
+            deposit.setupTransaction(this, account);
+            deposit.setName(Deposit.DEPOSIT_INTEREST);
+            deposit.setAmount(interestAmount);
+            transactionManager.invoke(deposit);
+        }
+        this.updateAccountTable();
 	}
+
+	@Override
+	public String getName() {
+		return NAME;
+	}
+
 }
