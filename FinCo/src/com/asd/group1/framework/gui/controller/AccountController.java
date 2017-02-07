@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 
 import com.asd.group1.framework.gui.AccountFrm;
 import com.asd.group1.framework.lib.account.AccountManager;
+import com.asd.group1.singleton.SingletonProvider;
 
 /**
  *
@@ -15,12 +16,12 @@ public class AccountController implements Controller {
     private AccountManager accountManager = null;
 
     public AccountController() {
-        accountManager = ClassicSingleton.getInstanceAccountManager();
+        accountManager = SingletonProvider.getInstanceAccountManager();
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        AccountFrm accountFrm = ClassicSingleton.getInstanceAccountFrm();
+        AccountFrm accountFrm = SingletonProvider.getInstanceAccountFrm();
         JDialog_AddAccount pac = new JDialog_AddAccount(accountFrm);
         pac.setBounds(450, 20, 300, 330);
         pac.show();
