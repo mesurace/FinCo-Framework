@@ -163,7 +163,7 @@ public class AccountFrm extends FincoFrame {
                 }else if (col == 2) {
                     selectedColumn = "city";
                 }else if (col == 3) {
-                    selectedColumn = "partyType";
+                    selectedColumn = "CustomerType";
                 } else if (col == 4) {
                     selectedColumn = "type";
                 } else if (col == 5) {
@@ -203,10 +203,10 @@ public class AccountFrm extends FincoFrame {
                 IAccount iAccount = it.next();
                 rowdata = new Object[8];
                 rowdata[0] = iAccount.getAcctNumber();
-                ACustomer aParty = (ACustomer) iAccount.getCustomer();
-                rowdata[1] = aParty.getName();
-                rowdata[2] = aParty.getCity();
-//                rowdata[3] = aParty.getType();
+                ACustomer aCustomer = (ACustomer) iAccount.getCustomer();
+                rowdata[1] = aCustomer.getName();
+                rowdata[2] = aCustomer.getCity();
+                rowdata[3] = aCustomer.getType();
                 rowdata[4] = iAccount.getType();
                 rowdata[5] = iAccount.getCurrentBalance();
                 model.addRow(rowdata);
