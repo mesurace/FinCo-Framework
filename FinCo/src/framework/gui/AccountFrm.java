@@ -206,7 +206,7 @@ public class AccountFrm extends FincoFrame {
                 ACustomer aParty = (ACustomer) iAccount.getCustomer();
                 rowdata[1] = aParty.getName();
                 rowdata[2] = aParty.getCity();
-//                rowdata[3] = aParty.getType();
+                rowdata[3] = aParty.getType();
                 rowdata[4] = iAccount.getType();
                 rowdata[5] = iAccount.getCurrentBalance();
                 model.addRow(rowdata);

@@ -74,8 +74,7 @@ public abstract class AAccount implements IAccount {
 	@Override
 	public String generateReport() {
 
-		String ret = "";
-		return ret;
+		return this.toString();
 	}
 
 	@Override
