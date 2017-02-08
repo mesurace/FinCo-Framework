@@ -133,4 +133,13 @@ public class AccountManager implements ISenderColleague {
 		return NAME;
 	}
 
+	public StringBuilder generateReport() {
+		StringBuilder sb = new StringBuilder();
+        for (Iterator<IAccount> it = accounts.iterator(); it.hasNext();) {
+            IAccount iAccount = it.next();
+            sb.append("\n" + iAccount.generateReport().toString());
+        }
+        return sb;
+	}
+
 }
