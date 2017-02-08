@@ -25,7 +25,7 @@ public class Deposit extends ATransaction{
 
 	@Override
 	public double getSignedAmount() {
-		return 0;
+		return 1 * this.getAmount();
 	}
 
 	@Override
