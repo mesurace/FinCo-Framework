@@ -22,6 +22,7 @@ import com.asd.group1.singleton.SingletonProvider;
  *
  * @author Manish Karki
  */
+@SuppressWarnings("unchecked")
 public class AccountManager implements ISenderColleague {
 
 	public static final String UPDATE_ACCOUNT_TABLE = "UPDATE_ACCOUNT_TABLE";
@@ -42,8 +43,16 @@ public class AccountManager implements ISenderColleague {
 	}
 
 	public void removeAccount(IAccount account) {
-
+		this.getAccounts().remove(account);
+        this.send(new Message(ACCOUNT_LIST_NOT_EMPTY, this.getAccounts().size() > 0));
+        this.updateAccountTable();
 	}
+	
+	public void addAccountToList(IAccount account) {
+        this.accounts.add(account);
+        this.send(new Message(ACCOUNT_LIST_NOT_EMPTY, true));
+        this.updateAccountTable();
+    }
 	
 	public FincoArrayList<AAccount> getAccounts() {
         return accounts;
@@ -79,7 +88,6 @@ public class AccountManager implements ISenderColleague {
 
 	}
 
-	@SuppressWarnings("unchecked")
 	public IAccount getAccountById(String accrno) {
 		for (Iterator<IAccount> it = accounts.iterator(); it.hasNext();) {
             IAccount iAccount = it.next();
