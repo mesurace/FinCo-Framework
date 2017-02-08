@@ -8,6 +8,7 @@ import com.asd.group1.framework.lib.predicate.IPredicate;
  * @author Suresh Adhikari
  *
  */
+@SuppressWarnings("rawtypes")
 public interface ICustomer {
 
 	public void addAccount(IAccount account);
