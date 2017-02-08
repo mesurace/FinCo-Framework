@@ -10,7 +10,7 @@ import com.asd.group1.framework.gui.components.finco.FincoDialog;
 public class JDialog_AddAccount extends FincoDialog {
 
     private AccountFrm parentframe;
-    //protected SymMouse aSymMouse = new SymMouse();
+    protected SymMouse aSymMouse = new SymMouse();
     protected ButtonGroup buttonGroup=new ButtonGroup();
 
     public JDialog_AddAccount(AccountFrm parent) {
@@ -58,10 +58,10 @@ public class JDialog_AddAccount extends FincoDialog {
         getContentPane().add(JLabel5);
         JLabel5.setForeground(java.awt.Color.black);
         JLabel5.setBounds(12, 180, 48, 24);
-//        JLabel6.setText("Birthdate");
-//        getContentPane().add(JLabel6);
-//        JLabel6.setForeground(java.awt.Color.black);
-//        JLabel6.setBounds(12, 204, 96, 24);
+        JLabel6.setText("Birthdate");
+        getContentPane().add(JLabel6);
+        JLabel6.setForeground(java.awt.Color.black);
+        JLabel6.setBounds(12, 204, 96, 24);
         JLabel7.setText("Email");
         getContentPane().add(JLabel7);
         JLabel7.setForeground(java.awt.Color.black);
@@ -98,8 +98,8 @@ public class JDialog_AddAccount extends FincoDialog {
 
         //{{REGISTER_LISTENERS
         
-        //JRadioButton_Chk.addMouseListener(aSymMouse);
-        //JRadioButton_Sav.addMouseListener(aSymMouse);
+        JRadioButton_Chk.addMouseListener(aSymMouse);
+        JRadioButton_Sav.addMouseListener(aSymMouse);
         SymAction lSymAction = new SymAction();
         JButton_OK.addActionListener(lSymAction);
         JButton_Cancel.addActionListener(lSymAction);
@@ -129,32 +129,32 @@ public class JDialog_AddAccount extends FincoDialog {
     protected javax.swing.JLabel JLabel8 = new javax.swing.JLabel();
     //}}
 
-//    protected class SymMouse extends java.awt.event.MouseAdapter {
-//
-//        public void mouseClicked(java.awt.event.MouseEvent event) {
-//            Object object = event.getSource();
-//            if (object == JRadioButton_Chk) {
-//                JRadioButtonChk_mouseClicked(event);
-//            } else if (object == JRadioButton_Sav) {
-//                JRadioButtonSav_mouseClicked(event);
-//            }
-//        }
-//    }
+    protected class SymMouse extends java.awt.event.MouseAdapter {
 
-//    protected void JRadioButtonChk_mouseClicked(java.awt.event.MouseEvent event) {
-//        //When Checking radio is clicked make this radio on 
-//        //and make Saving account radio off
-//        JRadioButton_Chk.setSelected(true);
-//        JRadioButton_Sav.setSelected(false);
-//    }
-//
-//    protected void JRadioButtonSav_mouseClicked(java.awt.event.MouseEvent event) {
-//        //When Saving radio is clicked make this radio on 
-//        //and make Checking account radio off
-//        JRadioButton_Chk.setSelected(false);
-//        JRadioButton_Sav.setSelected(true);
-//
-//    }
+        public void mouseClicked(java.awt.event.MouseEvent event) {
+            Object object = event.getSource();
+            if (object == JRadioButton_Chk) {
+                JRadioButtonChk_mouseClicked(event);
+            } else if (object == JRadioButton_Sav) {
+                JRadioButtonSav_mouseClicked(event);
+            }
+        }
+    }
+
+    protected void JRadioButtonChk_mouseClicked(java.awt.event.MouseEvent event) {
+        //When Checking radio is clicked make this radio on 
+        //and make Saving account radio off
+        JRadioButton_Chk.setSelected(true);
+        JRadioButton_Sav.setSelected(false);
+    }
+
+    protected void JRadioButtonSav_mouseClicked(java.awt.event.MouseEvent event) {
+        //When Saving radio is clicked make this radio on 
+        //and make Checking account radio off
+        JRadioButton_Chk.setSelected(false);
+        JRadioButton_Sav.setSelected(true);
+
+    }
 
     protected class SymAction implements java.awt.event.ActionListener {
 
@@ -169,19 +169,19 @@ public class JDialog_AddAccount extends FincoDialog {
     }
 
     protected void JButtonOK_actionPerformed(java.awt.event.ActionEvent event) {
-//        parentframe.accountnr = JTextField_ACNR.getText();
-//        parentframe.clientName = JTextField_NAME.getText();
-//        parentframe.street = JTextField_STR.getText();
-//        parentframe.city = JTextField_CT.getText();
-//        parentframe.zip = JTextField_ZIP.getText();
-//        parentframe.state = JTextField_ST.getText();
-//        if (JRadioButton_Chk.isSelected()) {
-//            parentframe.accountType = "Ch";
-//        } else {
-//            parentframe.accountType = "S";
-//        }
-//        parentframe.newaccount = true;
-//        dispose();
+        parentframe.accountnr = JTextField_ACNR.getText();
+        parentframe.clientName = JTextField_NAME.getText();
+        parentframe.street = JTextField_STR.getText();
+        parentframe.city = JTextField_CT.getText();
+        parentframe.zip = JTextField_ZIP.getText();
+        parentframe.state = JTextField_ST.getText();
+        if (JRadioButton_Chk.isSelected()) {
+            parentframe.accountType = "Ch";
+        } else {
+            parentframe.accountType = "S";
+        }
+        parentframe.newaccount = true;
+        dispose();
     }
 
     protected void JButtonCalcel_actionPerformed(java.awt.event.ActionEvent event) {

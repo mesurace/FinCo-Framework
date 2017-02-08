@@ -6,12 +6,17 @@ import com.asd.group1.framework.lib.mediator.Mediator;
 import com.asd.group1.framework.lib.transaction.TransactionManager;
 
 public class SingletonProvider {
+
 	private static AccountManager accountManager = null;
 	private static AccountFrm instance = null;
 	private static Mediator mediator = null;
 	private static TransactionManager transactionManager = null;
 
 	protected SingletonProvider() {
+	}
+
+	public static void setAccountFrm(AccountFrm accountFrm) {
+		instance = accountFrm;
 	}
 
 	public static AccountManager getInstanceAccountManager() {

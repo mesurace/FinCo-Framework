@@ -14,14 +14,18 @@ public interface ICustomer {
 
 	public void removeAccount(IAccount account);
 
-	public void sendEmail(IAccount account, String msg);
+	public void sendEmail(IFunctor f, IPredicate p, double amount);
 
 	public double getBalance();
 
-	public void sendEmail(IFunctor f, IPredicate p, double amount);
+	public String getType();
 
 	public IPredicate getDepositPredicate();
 
 	public IPredicate getWithdrawPredicate();
+
+	public String getName();
+
+	public void setName(String name);
 
 }
