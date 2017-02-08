@@ -6,7 +6,7 @@ import creditcard.account.CreditCardAccount;
 import creditcard.dialog.CreditCardDialog;
 import creditcard.type.CreditAccountType;
 import framework.app.customer.Person;
-import framework.app.type.PartyType;
+import framework.app.type.CustomerType;
 import framework.app.type.Types;
 import framework.gui.AccountFrm;
 import framework.gui.controller.AccountController;
@@ -46,7 +46,7 @@ public class AddCreditCardController extends AccountController {
 		account = aAccount;
 
 		ICustomer customer = ((CustomerFactory) FincoFactory.getFactory(Types.CUSTOMER))
-				.getCustomer(PartyType.PERSONAL);
+				.getCustomer(CustomerType.PERSONAL);
 		Person c = (Person) customer;
 		c.setName(name);
 		c.setCity(ct);

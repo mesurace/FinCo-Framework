@@ -7,7 +7,7 @@ import java.util.Date;
 import banking.dialog.PersonDialog;
 import banking.type.MyAccountType;
 import framework.app.customer.Person;
-import framework.app.type.PartyType;
+import framework.app.type.CustomerType;
 import framework.app.type.Types;
 import framework.gui.AccountFrm;
 import framework.gui.controller.AccountController;
@@ -38,7 +38,7 @@ public class AddPersonController extends AccountController {
 
 		IAccount account = ((AccountFactory) FincoFactory.getFactory(MyAccountType.MYAC)).getAccount(accountType);
 		ICustomer customer = ((CustomerFactory) FincoFactory.getFactory(Types.CUSTOMER))
-				.getCustomer(PartyType.PERSONAL);
+				.getCustomer(CustomerType.PERSONAL);
 		AAccount aAccount = (AAccount) account;
 		aAccount.setAcctNumber(acnr);
 

@@ -2,7 +2,7 @@ package framework.lib.factory;
 
 import framework.app.customer.Company;
 import framework.app.customer.Person;
-import framework.app.type.PartyType;
+import framework.app.type.CustomerType;
 import framework.lib.customer.ICustomer;
 
 /**
@@ -13,9 +13,9 @@ public class CustomerFactory extends AbstractFactory {
 
 	@SuppressWarnings("rawtypes")
 	public ICustomer getCustomer(Enum type) {
-		if (type == PartyType.COMPANY) {
+		if (type == CustomerType.COMPANY) {
 			return new Company();
-		} else if (type == PartyType.PERSONAL) {
+		} else if (type == CustomerType.PERSONAL) {
 			return new Person();
 		}
 		return null;

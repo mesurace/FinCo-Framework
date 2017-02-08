@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import banking.dialog.CompanyDialog;
 import banking.type.MyAccountType;
 import framework.app.customer.Company;
-import framework.app.type.PartyType;
+import framework.app.type.CustomerType;
 import framework.app.type.Types;
 import framework.gui.AccountFrm;
 import framework.gui.controller.AccountController;
@@ -38,7 +38,7 @@ public class AddCompanyController extends AccountController {
 		aAccount.setAcctNumber(acnr);
 
 		account = aAccount;
-		ICustomer customer = ((CustomerFactory) FincoFactory.getFactory(Types.CUSTOMER)).getCustomer(PartyType.COMPANY);
+		ICustomer customer = ((CustomerFactory) FincoFactory.getFactory(Types.CUSTOMER)).getCustomer(CustomerType.COMPANY);
 		Company c = (Company) customer;
 		c.setName(name);
 		c.setCity(ct);
