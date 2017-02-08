@@ -13,6 +13,7 @@ import com.asd.group1.framework.lib.predicate.IPredicate;
  * @author Suresh Adhikari
  *
  */
+@SuppressWarnings({ "rawtypes", "unchecked" })
 public class Person extends ACustomer implements IPerson {
 
 	private Date dateOfBirth = new Date("02/07/2017");
