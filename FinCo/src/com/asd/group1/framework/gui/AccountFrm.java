@@ -32,6 +32,7 @@ import com.asd.group1.framework.lib.account.AAccount;
 import com.asd.group1.framework.lib.account.AccountManager;
 import com.asd.group1.framework.lib.account.IAccount;
 import com.asd.group1.framework.lib.customer.ACustomer;
+import com.asd.group1.framework.lib.factory.FincoFactory;
 import com.asd.group1.framework.lib.mediator.Mediator;
 import com.asd.group1.framework.lib.mediator.Message;
 import com.asd.group1.singleton.SingletonProvider;
@@ -39,7 +40,7 @@ import com.asd.group1.singleton.SingletonProvider;
 public class AccountFrm extends FincoFrame {
 
     static {
-       // new FactoryProducer();
+        new FincoFactory();
     }
     /**
      * **

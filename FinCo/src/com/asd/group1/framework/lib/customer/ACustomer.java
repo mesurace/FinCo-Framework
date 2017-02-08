@@ -78,6 +78,12 @@ public abstract class ACustomer implements ICustomer {
 		this.accountList = accountList;
 	}
 
+	@Override
+	public void addAccount(IAccount account) {
+		this.accountList.add(account);
+		account.setCustomer(this);
+	}
+
 	public double getBalance() {
 		double balance = 0;
 		for (IAccount account : this.getAccountList()) {

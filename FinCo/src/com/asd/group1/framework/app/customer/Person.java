@@ -1,7 +1,8 @@
 package com.asd.group1.framework.app.customer;
 
 import java.util.Date;
-
+import com.asd.group1.framework.app.predicates.NegativeBalance;
+import com.asd.group1.framework.app.predicates.Person500Deposit;
 import com.asd.group1.framework.lib.account.IAccount;
 import com.asd.group1.framework.lib.customer.ACustomer;
 import com.asd.group1.framework.lib.customer.IPerson;
@@ -14,50 +15,51 @@ import com.asd.group1.framework.lib.predicate.IPredicate;
  */
 public class Person extends ACustomer implements IPerson {
 
-	private Date birthDate;
+	private Date dateOfBirth = new Date("02/07/2017");
+	private final String type = "P";
 
-	public Date getBirthDate() {
-		return birthDate;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 	@Override
 	public void addAccount(IAccount account) {
-		// TODO Auto-generated method stub
-
+		super.addAccount(account);
 	}
 
 	@Override
 	public void removeAccount(IAccount account) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void sendEmail(IAccount account, String msg) {
-		// TODO Auto-generated method stub
-
+		// super.removeAccount(account);
 	}
 
 	@Override
 	public void sendEmail(IFunctor f, IPredicate p, double amount) {
-		// TODO Auto-generated method stub
-		
+		if (p != null) {
+			if (p.check(amount)) {
+				if (f != null) {
+					f.compute(this);
+				}
+			}
+		} else {
+			f.compute(this);
+		}
 	}
 
 	@Override
+	public String getType() {
+		return type;
+	}
+
 	public IPredicate getDepositPredicate() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Person500Deposit();
 	}
 
-	@Override
 	public IPredicate getWithdrawPredicate() {
-		// TODO Auto-generated method stub
-		return null;
+		return new NegativeBalance();
 	}
 
 }
