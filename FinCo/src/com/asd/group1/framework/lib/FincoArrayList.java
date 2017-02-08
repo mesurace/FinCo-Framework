@@ -1,8 +1,8 @@
 package com.asd.group1.framework.lib;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.asd.group1.framework.app.iterator.SortedIterator;
 
@@ -11,7 +11,7 @@ import com.asd.group1.framework.app.iterator.SortedIterator;
  * @author Manish Karki
  */
 @SuppressWarnings({"rawtypes"})
-public class FincoArrayList<T> extends ArrayList {
+public class FincoArrayList<T> extends CopyOnWriteArrayList {
 
 	/**
 	 * 
