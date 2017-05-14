@@ -1,4 +1,4 @@
-# ASDFramework
+# JAVA Framework
 
  Used Factory Method, Singleton, Iterator, Mediator and Strategy design patterns. 
  
